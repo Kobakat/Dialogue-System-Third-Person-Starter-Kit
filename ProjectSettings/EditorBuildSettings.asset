@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TestLevel.unity
     guid: 0c8ebc56da858d840923db7c7b564f5e
   - enabled: 1
-    path: Assets/Sun_Temple/Scenes/Temple.unity
+    path: Assets/Scenes/Temple.unity
     guid: d8f213b28287d8b4dab42cf4a34f94e5
   - enabled: 1
-    path: Assets/Sun_Temple/Scenes/Courtyard.unity
+    path: Assets/Scenes/Courtyard.unity
     guid: 0dd62397a41d8954ca0b016268c41fbd
   m_configObjects: {}

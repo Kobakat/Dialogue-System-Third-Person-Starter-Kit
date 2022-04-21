@@ -218,15 +218,21 @@ public class ThirdPersonCharacterController : MonoBehaviour
         DialogueManager.instance.conversationStarted += OnConversationStarted;
         DialogueManager.instance.conversationEnded += OnConversationEnded;
     }
+
     private void OnDisable()
     {
-        DialogueManager.instance.conversationStarted -= OnConversationStarted;
-        DialogueManager.instance.conversationEnded -= OnConversationEnded;
+        if(DialogueManager.instance)
+        {
+            DialogueManager.instance.conversationStarted -= OnConversationStarted;
+            DialogueManager.instance.conversationEnded -= OnConversationEnded;
+        }
     }
+
     private void OnConversationStarted(Transform t)
     {
         inConversation = true;
     }
+
     private void OnConversationEnded(Transform t)
     {
         inConversation = false;

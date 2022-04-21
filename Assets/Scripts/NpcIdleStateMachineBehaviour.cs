@@ -23,11 +23,11 @@ public class NpcIdleStateMachineBehaviour : StateMachineBehaviour
         if (npc == null)
         {
             npc = animator.GetComponentInChildren<Npc>();
-            timeBetweenIdleAnimationChangeRolls =
-                Random.Range(npc.MinTimeBetweenIdleAnimationChangeRolls, npc.MaxTimeBetweenIdleAnimationChangeRolls);
+
+            timeBetweenIdleAnimationChangeRolls = npc ? Random.Range(npc.MinTimeBetweenIdleAnimationChangeRolls, npc.MaxTimeBetweenIdleAnimationChangeRolls) : 5f;
         }
 
-        if (npc.UseIdleAnimationFlourishes)
+        if (!npc || npc.UseIdleAnimationFlourishes)
         {
             elapsedTime = 0;
             animator.SetInteger(randomAnimationValueAnimParam, 0);
@@ -40,7 +40,7 @@ public class NpcIdleStateMachineBehaviour : StateMachineBehaviour
     // The AnimationController uses this parameter to determine transitions to alternate anims to create variety.
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (npc.UseIdleAnimationFlourishes)
+        if (!npc || npc.UseIdleAnimationFlourishes)
         {
             elapsedTime += Time.deltaTime;
             if (elapsedTime >= timeBetweenIdleAnimationChangeRolls)

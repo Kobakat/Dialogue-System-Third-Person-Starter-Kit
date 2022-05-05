@@ -1208,7 +1208,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: None()
+        value: SetCinemachineBrain(false);
         type: 0
         typeString: 
       conversationID: 4
@@ -3416,8 +3416,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 431.6764, y: 121.9512}
-    canvasZoom: 0.8200002
+    canvasScrollPosition: {x: 380.33963, y: 508.17078}
+    canvasZoom: 0.97
   - id: 5
     fields:
     - title: Title

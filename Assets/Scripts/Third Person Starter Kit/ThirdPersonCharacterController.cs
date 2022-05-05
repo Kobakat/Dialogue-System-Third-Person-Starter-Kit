@@ -199,9 +199,19 @@ public class ThirdPersonCharacterController : MonoBehaviour
 
     private void UpdateAnimParameters()
     {
-        animator.SetBool(sprintAnimParameter, IsSprinting);
-        animator.SetFloat(forwardAnimParameter, yMoveInput);
-        animator.SetFloat(horizontalAnimParameter, xMoveInput);
+        if(!inConversation)
+        {
+            animator.SetBool(sprintAnimParameter, IsSprinting);
+            animator.SetFloat(forwardAnimParameter, yMoveInput);
+            animator.SetFloat(horizontalAnimParameter, xMoveInput);
+        }
+
+        else
+        {
+            animator.SetBool(sprintAnimParameter, false);
+            animator.SetFloat(forwardAnimParameter, 0.0f);
+            animator.SetFloat(horizontalAnimParameter, 0.0f);   
+        }
     }
 
     private void GetInput()

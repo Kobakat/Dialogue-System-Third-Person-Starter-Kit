@@ -17,12 +17,15 @@ public class CinematicSystem : MonoBehaviour
     void StartConversation(Transform T)
     {
         CinematicNPC NPC = DialogueManager.Instance.activeConversation.Conversant.GetComponent<CinematicNPC>();
-        StartCoroutine(Fade(2.0f, NPC, true));
+        Player.GetComponent<Animator>().applyRootMotion = false;
+        StartCoroutine(Fade(1.0f, NPC, true));
     }
 
     void EndConversation(Transform T)
     {
-        StartCoroutine(Fade(2.0f, null, false));
+        StartCoroutine(Fade(1.0f, null, false));
+        Player.GetComponent<Animator>().applyRootMotion = true;
+        Player.GetComponent<CharacterController>().enabled = true;
     }
 
     IEnumerator Fade(float FullFadeDuration, CinematicNPC NPC, bool StartedConversation)
@@ -40,21 +43,34 @@ public class CinematicSystem : MonoBehaviour
             yield return null;
         }
 
-        //Now that we've faded out, place the actors in the appropritate place and cut to the camera in question
-        if(StartedConversation)
+        CanvasAlpha.alpha = 1.0f;
+
+        //Conversation started
+        if (StartedConversation)
         {
-            Player.transform.SetPositionAndRotation(NPC.PlayerConversationTransform.position, NPC.PlayerConversationTransform.rotation);
+            //Move player into position
+            Player.transform.position = NPC.PlayerConversationTransform.position;
+            Player.transform.rotation = NPC.PlayerConversationTransform.rotation;
+
+            Debug.DrawRay(NPC.PlayerConversationTransform.position, Vector3.up, Color.red, 10f);
+
+            //Cache camera values
             PreviousCamera = Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera;
             PreviousCameraPriority = PreviousCamera.Priority;
             PreviousCamera.Priority = 0;
+
+            //Start cinematic
             NPC.SetActiveSpeaker(true);
         }
 
+        //Conversation ended, return to normal
         else
         {
             Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera.Priority = 0;
             PreviousCamera.Priority = PreviousCameraPriority;
         }
+
+        yield return new WaitForSeconds(0.1f);
 
         //Fade in
         Timer = 0.0f;

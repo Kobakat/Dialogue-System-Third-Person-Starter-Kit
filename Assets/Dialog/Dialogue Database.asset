@@ -1180,11 +1180,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: 3
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1208,7 +1208,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: SetCinemachineBrain(false);
+        value: 
         type: 0
         typeString: 
       conversationID: 4
@@ -1300,6 +1300,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: Response Menu Sequence
+        value: Cinematic(true);
+        type: 0
+        typeString: 
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -1380,7 +1384,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Cinematic(false);
         type: 0
         typeString: 
       conversationID: 4
@@ -1451,7 +1455,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Cinematic(false);
         type: 0
         typeString: 
       conversationID: 4
@@ -1522,7 +1526,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Cinematic(false);
         type: 0
         typeString: 
       conversationID: 4
@@ -3416,8 +3420,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 380.33963, y: 508.17078}
-    canvasZoom: 0.97
+    canvasScrollPosition: {x: 182.44553, y: 104.84586}
+    canvasZoom: 0.91
   - id: 5
     fields:
     - title: Title

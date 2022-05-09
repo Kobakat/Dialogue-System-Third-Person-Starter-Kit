@@ -7,10 +7,12 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
     public class SequencerCommandCinematic : SequencerCommand
     {
         public void Awake()
-        {           
+        {        
             bool SpeakerActive = GetParameterAsBool(0);
+
             DialogueManager.Instance.activeConversation.Conversant.GetComponent<CinematicNPC>().SetActiveSpeaker(!SpeakerActive);
-            Stop();          
+
+            Stop();
         }
     }
 }

@@ -9,7 +9,7 @@ public class LevelTrigger : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene(Level);
+            LevelManager.LoadLevel(Level);
         }
     }
 }

@@ -10,7 +10,18 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
         {        
             bool SpeakerActive = GetParameterAsBool(0);
 
-            DialogueManager.Instance.activeConversation.Conversant.GetComponent<CinematicNPC>().SetActiveSpeaker(!SpeakerActive);
+            CinematicNPC C = DialogueManager.Instance.activeConversation.Conversant.GetComponent<CinematicNPC>();
+            
+            if(C)
+            {
+                C.SetActiveSpeaker(!SpeakerActive);
+            }
+
+            else
+            {
+                C = DialogueManager.Instance.activeConversation.Conversant.GetComponentInChildren<CinematicNPC>();
+                C.SetActiveSpeaker(!SpeakerActive);
+            }
 
             Stop();
         }

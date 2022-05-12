@@ -18,8 +18,7 @@ public class LevelManager : MonoBehaviour
     static bool bLoaded;
 
     void Awake()
-    {
-        bLoaded = true;
+    {        
         Self = this;
 
         StartCoroutine(Self.Fade("", true));
@@ -32,6 +31,7 @@ public class LevelManager : MonoBehaviour
         }
 
         Cursor.visible = false;
+        bLoaded = true;
     }
 
     public static void LoadLevel(string Path)

@@ -320,6 +320,10 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: 
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
   - id: 4
     fields:
     - title: Name
@@ -2986,7 +2990,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1278.9736
-        y: 161.43205
+        y: 159.86955
         width: 160
         height: 30
     - id: 23
@@ -3546,8 +3550,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 74.54541, y: 0}
-    canvasZoom: 0.55000037
+    canvasScrollPosition: {x: 441.11835, y: 0}
+    canvasZoom: 0.6400003
   - id: 5
     fields:
     - title: Title
@@ -5317,7 +5321,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 'SetQuestState("Gwen''s Dilemma", "active");
+      userScript: 'SetQuestState("Gwen''s Dilemma", "success");
 
 '
       onExecute:
@@ -5406,7 +5410,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 105.5056, y: 0}
+    canvasScrollPosition: {x: 539.54816, y: 65.95744}
     canvasZoom: 0.94000006
   - id: 7
     fields:

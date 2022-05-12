@@ -18,8 +18,11 @@ public class CinematicSystem : MonoBehaviour
 
     public void StartCinematicDialogue(CinematicNPC NPC)
     {
-        ActiveNPC = NPC;
-        StartCoroutine(Fade(1.0f, NPC, true, NPC.Conversation));   
+        if(!DialogueManager.Instance.IsConversationActive)
+        {
+            ActiveNPC = NPC;
+            StartCoroutine(Fade(1.0f, NPC, true, NPC.Conversation));
+        }   
     }
 
     void EndConversation(Transform T)

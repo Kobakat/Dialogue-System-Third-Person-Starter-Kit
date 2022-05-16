@@ -13,10 +13,17 @@ public class CursorManager : MonoBehaviour
     private void Awake()
     {
         UpdateCursorVisibility(false);
+        StartCoroutine(Wait());
     }
     private void UpdateCursorVisibility(bool shouldShowCursor)
     {
         Cursor.visible = shouldShowCursor;
         Cursor.lockState = shouldShowCursor ? CursorLockMode.None : CursorLockMode.Locked;
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(.5f);
+        UpdateCursorVisibility(false);
     }
 }
